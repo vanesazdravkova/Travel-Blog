@@ -11,7 +11,6 @@ public enum TripTypeEnum {
     HISTORICAL,
     SKI,
     DESERT,
-    FOREST,
     ISLAND
 }
 

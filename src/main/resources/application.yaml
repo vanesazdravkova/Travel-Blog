@@ -14,6 +14,9 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+  sql:
+    init:
+      mode: always
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
@@ -23,6 +26,20 @@ spring:
       hibernate:
         format_sql: true
     defer-datasource-initialization: true
+#    show-sql: true
+cloudinary:
+  api-key: ${CLAUDINARY_API_KEY:}
+  api-secret: ${CLAUDINARY_API_SECRET:}
+  cloud-name: dt4o2jhmk
+
+#logging:
+#  level:
+#    com.rewedigital.kafka.library: WARN
+#    com.rewedigital.fulfillment.integration.service.goods.in: DEBUG
+#    org.apache.kafka.clients: WARN
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.orm.jdbc.bind: TRACE
+
 site:
   base:
     url: http://localhost:8080
