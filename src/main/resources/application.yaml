@@ -32,11 +32,14 @@ cloudinary:
   api-secret: ${CLAUDINARY_API_SECRET:}
   cloud-name: dt4o2jhmk
 
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: vanesa.zdravkova@gmail.com
+  password: ${EMAIL_PASSWORD:}
+
 #logging:
 #  level:
-#    com.rewedigital.kafka.library: WARN
-#    com.rewedigital.fulfillment.integration.service.goods.in: DEBUG
-#    org.apache.kafka.clients: WARN
 #    org.hibernate.SQL: DEBUG
 #    org.hibernate.orm.jdbc.bind: TRACE
 
