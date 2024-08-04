@@ -1,6 +1,6 @@
 package bg.softuni.travelProject.service;
 
-import bg.softuni.travelProject.model.MyUserDetails;
+import bg.softuni.travelProject.model.user.MyUserDetails;
 import bg.softuni.travelProject.model.entity.RoleEntity;
 import bg.softuni.travelProject.model.entity.UserEntity;
 import bg.softuni.travelProject.repository.UserRepository;
