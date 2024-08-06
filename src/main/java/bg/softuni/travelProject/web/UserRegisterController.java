@@ -50,7 +50,7 @@ public class UserRegisterController {
 
         userService.register(userRegisterDto, localeResolver.resolveLocale(request));
         redirectAttributes.addAttribute("username", userRegisterDto.getUsername());
-        return "redirect:/users/register/sendNewVerificationMail";
+        return "redirect:/users/register/sendNewVerificationMailPage";
     }
 
     @GetMapping("/register/verify")
@@ -66,6 +66,22 @@ public class UserRegisterController {
         redirectAttributes.addFlashAttribute("successMessage",
                 "Your account was successfully verified. You can now login.");
         return "redirect:/users/login";
+    }
+
+    @GetMapping("/register/sendNewVerificationMailPage")
+    public String getSendNewVerificationEmail(@RequestParam("username") String username,
+                                           HttpServletRequest request,
+                                           Model model, RedirectAttributes redirectAttributes) {
+
+        if (userService.findByUsername(username).isAccountVerified()){
+            redirectAttributes.addFlashAttribute("successMessage",
+                    "This account is verified. You can login.");
+            return "redirect:/users/login";
+        }
+
+        model.addAttribute("username", username);
+
+        return "need-for-verification";
     }
 
     @GetMapping("/register/sendNewVerificationMail")

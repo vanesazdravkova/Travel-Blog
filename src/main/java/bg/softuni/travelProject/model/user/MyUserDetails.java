@@ -1,4 +1,4 @@
-package bg.softuni.travelProject.model;
+package bg.softuni.travelProject.model.user;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
