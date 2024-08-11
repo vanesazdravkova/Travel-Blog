@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="profile-body">
+
+<header>
+  <nav th:replace="~{fragments/commons::navigation}"></nav>
+</header>
+
+<div class="container-fluid">
+  <div class="d-flex justify-content-center align-items-center mx-2">
+    <div    th:object="${statistics}"
+            class="col-sm- col-lg-5 mx-auto p-5 bg-custom-opaque border-custom  mt-3 mb-5">
+
+      <h2 class="text-center text-white">Statistics</h2>
+      <p class="text-center text-white mb-4" th:inline="text">
+        [[${#temporals.format(statistics.localDateTime, 'EEE, MMM dd, yyyy HH:mm')}]]
+      </p>
+      <h5 th:text="|All trips: *{allTrips}|"></h5>
+      <h5 th:text="|Asiand trips: *{asianTrips}|"> </h5>
+      <h5 th:text="|African trips: *{africanTrips}|"> </h5>
+      <h5 th:text="|North American trips: *{northAmericanTrips}|"> </h5>
+      <h5 th:text="|South American trips: *{southAmericanTrips}|"> </h5>
+      <h5 th:text="|Antarctican trips: *{antarcticanTrips}|"> </h5>
+      <h5 th:text="|European trips: *{europeanTrips}|"> </h5>
+      <h5 th:text="|Australian trips: *{australianTrips}|"> </h5>
+      <h5 th:text="|Registered users: *{usersCount}|"> </h5>
+
+      <button class="btn btn-info mt-4" onclick="goBackOrHome()">Back</button>
+
+    </div>
+  </div>
+</div>
+
+<div>
+  <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+<script th:src="@{/js/backButton.js}"></script>
+</body>
+</html>
