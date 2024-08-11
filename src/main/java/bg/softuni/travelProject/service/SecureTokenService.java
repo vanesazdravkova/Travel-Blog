@@ -6,4 +6,6 @@ import bg.softuni.travelProject.model.entity.UserEntity;
 public interface SecureTokenService {
 
     SecureTokenEntity createSecureToken(UserEntity user);
+
+    void cleanUpSecureTokens();
 }

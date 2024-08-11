@@ -10,6 +10,7 @@ import org.springframework.security.crypto.keygen.KeyGenerators;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class SecureTokenServiceImpl implements SecureTokenService {
@@ -30,5 +31,11 @@ public class SecureTokenServiceImpl implements SecureTokenService {
         secureTokenEntity.setExpireAt(LocalDateTime.now().plusMinutes(30));
         secureTokenEntity.setUser(user);
         return this.secureTokenRepository.save(secureTokenEntity);
+    }
+
+    @Override
+    public void cleanUpSecureTokens(){
+        List<SecureTokenEntity> tokensToDelete = secureTokenRepository.findAllByExpireAtBefore(LocalDateTime.now());
+        secureTokenRepository.deleteAll(tokensToDelete);
     }
 }
