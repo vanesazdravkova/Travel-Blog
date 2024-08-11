@@ -13,6 +13,15 @@ public class UserView {
     private String email;
     private Set<RoleEntity> roles;
 
+    public Long getId() {
+        return id;
+    }
+
+    public UserView setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -55,15 +64,6 @@ public class UserView {
 
     public UserView setRoles(Set<RoleEntity> roles) {
         this.roles = roles;
-        return this;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public UserView setId(Long id) {
-        this.id = id;
         return this;
     }
 }

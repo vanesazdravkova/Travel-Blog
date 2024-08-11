@@ -24,6 +24,15 @@ public class UserEditDto {
     @Size(min = 2, max = 20, message = "Last name length must be between 2 and 20 characters!")
     private String lastName;
 
+    public Long getId() {
+        return id;
+    }
+
+    public UserEditDto setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -57,15 +66,6 @@ public class UserEditDto {
 
     public UserEditDto setLastName(String lastName) {
         this.lastName = lastName;
-        return this;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public UserEditDto setId(Long id) {
-        this.id = id;
         return this;
     }
 }

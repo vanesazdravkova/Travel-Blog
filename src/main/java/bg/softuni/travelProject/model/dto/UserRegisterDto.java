@@ -35,24 +35,6 @@ public class UserRegisterDto {
     @Size(min = 3, max = 20, message = "Last name length must be between 3 and 20 characters!")
     private String lastName;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public UserRegisterDto setFirstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public UserRegisterDto setLastName(String lastName) {
-        this.lastName = lastName;
-        return this;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -86,6 +68,24 @@ public class UserRegisterDto {
 
     public UserRegisterDto setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+        return this;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public UserRegisterDto setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public UserRegisterDto setLastName(String lastName) {
+        this.lastName = lastName;
         return this;
     }
 }

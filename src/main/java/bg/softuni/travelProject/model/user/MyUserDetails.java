@@ -34,13 +34,13 @@ public class MyUserDetails implements UserDetails {
         return id;
     }
 
-    public String getFullName() {
-        return fullName;
+    @Override
+    public String getUsername() {
+        return username;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+    public String getFullName() {
+        return fullName;
     }
 
     @Override
@@ -49,8 +49,13 @@ public class MyUserDetails implements UserDetails {
     }
 
     @Override
-    public String getUsername() {
-        return username;
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
     }
 
     @Override
@@ -66,10 +71,5 @@ public class MyUserDetails implements UserDetails {
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return enabled;
     }
 }
