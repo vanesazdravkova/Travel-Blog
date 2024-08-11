@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body>
+
+<header>
+    <nav th:replace="~{fragments/commons::navigation}"></nav>
+</header>
+
+<div class="container-fluid">
+
+    <div class="row mb-2 px-4 text-dark">
+        <h3 class="text-center m-auto py-3" th:text="${heading}">All Trips</h3>
+    </div>
+
+    <div class="card-group card-padding">
+
+        <div    th:each="t : ${trips}" th:object="${t}"
+                class="col-sm-12 col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 no-radius shadow border-0">
+                <img class="card-img-top no-radius" th:src="*{pictureUrl}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 th:text="*{name}"
+                        class="card-title mb-0">Париж през пролетта</h5>
+                    <p th:text="|Добавена от: *{author}|"
+                       class="card-text">Добавено от: Ивета Рангелова</p>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row">
+                        <div class="col-3 p-2 text-center">
+                            <p><i class="fas fa-calendar-day fa-2x"></i></p>
+                            <p th:text="|*{days} дни|">5 дни</p>
+                        </div>
+                        <div class="col-3 p-2 text-center">
+                            <p><i class="far fa-flag fa-2x"></i></p>
+                            <p th:text="*{countriesVisited}">1</p>
+                        </div>
+
+                        <div th:switch="${t.continent.name()}"
+                             class="col-3 p-2 text-center">
+                            <div th:case="'ASIA'">
+                                <p><i class="fas fa-globe-asia fa-2x"></i></p>
+                                <p>Asia</p>
+                            </div>
+                            <div th:case="'AFRICA'">
+                            <p><i class="fas fa-globe-africa fa-2x"></i></p>
+                            <p>Africa</p>
+                            </div>
+                            <div th:case="'NORTH_AMERICA'">
+                                <p><i class="fas fa-globe-americas fa-2x"></i></p>
+                                <p>North America</p>
+                            </div>
+                            <div th:case="'SOUTH_AMERICA'">
+                                <p><i class="fas fa-globe-americas fa-2x"></i></p>
+                                <p>South America</p>
+                            </div>
+                            <div th:case="'ANTARCTICA'">
+                                <p><i class="fas fa-mitten fa-2x"></i></p>
+                                <p>Antarctica</p>
+                            </div>
+                            <div th:case="'EUROPE'">
+                                <p><i class="fas fa-globe-europe fa-2x"></i></p>
+                                <p>Europe</p>
+                            </div>
+                            <div th:case="'AUSTRALIA'">
+                                <p><i class="fas fa-globe-asia fa-2x"></i></p>
+                                <p>Australia</p>
+                            </div>
+                        </div>
+
+                        <div class="col-3 p-2 text-center">
+                            <p><i class="fas fa-hand-holding-usd fa-2x"></i></p>
+                            <p th:text="*{#strings.capitalize(#strings.toLowerCase(pricingLevel))}">Стандартно</p>
+                        </div>
+                    </div>
+                    <a th:href="@{/trips/details/{id}(id=*{id})}" class="btn btn-secondary btn-sm mb-2">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- EO: Main -->
+
+<th:block th:if="${not trips.isEmpty()}">
+    <nav th:replace="~{fragments/commons::pagination}"></nav>
+</th:block>
+
+
+<footer th:replace="~{fragments/commons::footer}"></footer>
+
+</body>
+
+</html>

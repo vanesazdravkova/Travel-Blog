@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body>
+
+<header>
+    <nav th:replace="~{fragments/commons::navigation}"></nav>
+</header>
+<div class="container-fluid justify-content-center align-items-center px-4">
+    <div class="row">
+        <form th:action="@{/trips/search}"
+              th:method="GET"
+              th:object="${tripSearchDto}"
+              class="col-sm-12 col-lg-10 mx-auto"
+              id="searchTripForm">
+
+            <h2 class="text-center text-dark my-4">Search Trips</h2>
+
+            <div class="row px-3">
+                <div class="form-group col-sm-12 col-md-2 mx-0 px-2">
+                    <label for="name" class="text-dark font-weight-bold">Trip name</label>
+                    <input th:field="*{name}"
+                           th:errorclass="is-invalid"
+                           id="name"
+                           type="text"
+                           class="form-control"
+                           placeholder="Trip name" />
+                    <p th:each="err : ${#fields.errors('name')}"
+                       th:text="${err}"  id="inputNameError"
+                       class="invalid-feedback text-danger mb-0">Trip name must be between 5 and 30 symbols!</p>
+                </div>
+                <div class="form-group col-sm-12 col-md-2  mx-0 px-2">
+                    <label for="minDays" class="text-dark font-weight-bold">Minimum Days</label>
+                    <input th:field="*{minDays}"
+                           th:errorclass="is-invalid"
+                           id="minDays" type="number" min="0" max="480" step="1" class="form-control"
+                           placeholder="Min days" />
+                    <p th:each="err : ${#fields.errors('minDays')}"
+                       th:text="${err}"
+                       class="invalid-feedback text-danger mb-0">
+                        Enter minimum days to spend.
+                    </p>
+                </div>
+                <div class="form-group col-sm-12 col-md-2  mx-0 px-2">
+                    <label for="maxDays" class="text-dark font-weight-bold">Max Days</label>
+                    <input th:field="*{maxDays}"
+                           th:errorclass="is-invalid"
+                           id="maxDays" type="number" min="0" max="480" step="1" class="form-control"
+                           placeholder="Max days" />
+                    <p th:each="err : ${#fields.errors('maxDays')}"
+                       th:text="${err}"
+                       class="invalid-feedback text-danger mb-0">
+                        Enter max days to spend.
+                    </p>
+                </div>
+                <div class="form-group col-sm-12 col-md-2  mx-0 px-2">
+                    <label class="text-center text-dark font-weight-bold" for="pricingLevel">Pricing level</label>
+                    <select  th:field="*{pricingLevel}"
+                             th:errorclass="is-invalid"
+                             id="pricingLevel" class="form-control">
+                        <option value="" selected>Select pricing level</option>
+                        <option th:each="l : ${T(bg.softuni.travelProject.model.enums.PricingLevelEnum).values()}"
+                                th:value="${l}"
+                                th:text="${l}">Select pricing level</option>
+                    </select>
+                    <p class="invalid-feedback text-danger mb-0">
+                        Pricing Level must be selected.
+                    </p>
+                </div>
+                <div class="form-group col-sm-12 col-md-2  mx-0 px-2">
+                    <label class="text-center text-dark font-weight-bold" for="continent">Continent</label>
+                    <select th:field="*{continent}"
+                            th:errorclass="is-invalid"
+                            id="continent" class="form-control">
+                        <option value="">Select continent</option>
+                        <option th:each="c : ${T(bg.softuni.travelProject.model.enums.ContinentEnum).values()}"
+                                th:value="${c}"
+                                th:text="${c}">Select Continent</option>
+                    </select>
+                    <p class="invalid-feedback text-danger mb-0">
+                        Continent must be selected.
+                    </p>
+                </div>
+                <div class="form-group col-sm-12 col-md-2  mx-0 px-2">
+                    <label class="text-center text-dark font-weight-bold" for="types">Type</label>
+                    <select th:field="*{types}"
+                            th:errorclass="is-invalid"
+                            id="types" class="form-control">
+                        <option value="">Select types</option>
+                        <option th:each="t : ${T(bg.softuni.travelProject.model.enums.TripTypeEnum).values()}"
+                                th:value="${t}"
+                                th:text="${t}">Select type</option>
+                    </select>
+                    <p class="invalid-feedback text-danger mb-0">
+                        Type must be selected.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row px-3 align-items-center">
+                <div class="col-lg-2 d-flex justify-content-center pr-lg-0 mx-auto">
+                    <input id="submitBtn" type="submit" class="btn btn-light shadow btn-lg" value="Search" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="title pt-3">
+    <h3 class="text-center text-dark d-block">Results from searching</h3>
+    <p class="text-center text-dark d-block pt-2" th:text="${result}"></p>
+</div>
+
+<div class="card-group card-padding">
+
+    <div    th:each="t : ${trips}" th:object="${t}"
+            class="col-sm-12 col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 no-radius shadow border-0">
+            <img class="card-img-top no-radius" th:src="*{pictureUrl}" alt="Card image cap">
+            <div class="card-body">
+                <h5 th:text="*{name}"
+                    class="card-title mb-0">Париж през пролетта</h5>
+                <p th:text="|Добавена от: *{author}|"
+                   class="card-text">Добавено от: Ивета Рангелова</p>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex flex-row">
+                    <div class="col-3 p-2 text-center">
+                        <p><i class="fas fa-calendar-day fa-2x"></i></p>
+                        <p th:text="|*{days} дни|">5 дни</p>
+                    </div>
+                    <div class="col-3 p-2 text-center">
+                        <p><i class="far fa-flag fa-2x"></i></p>
+                        <p th:text="*{countriesVisited}">1</p>
+                    </div>
+
+                    <div th:switch="${t.continent.name()}"
+                         class="col-3 p-2 text-center">
+                        <div th:case="'ASIA'">
+                            <p><i class="fas fa-globe-asia fa-2x"></i></p>
+                            <p>Asia</p>
+                        </div>
+                        <div th:case="'AFRICA'">
+                            <p><i class="fas fa-globe-africa fa-2x"></i></p>
+                            <p>Africa</p>
+                        </div>
+                        <div th:case="'NORTH_AMERICA'">
+                            <p><i class="fas fa-globe-americas fa-2x"></i></p>
+                            <p>North America</p>
+                        </div>
+                        <div th:case="'SOUTH_AMERICA'">
+                            <p><i class="fas fa-globe-americas fa-2x"></i></p>
+                            <p>South America</p>
+                        </div>
+                        <div th:case="'ANTARCTICA'">
+                            <p><i class="fas fa-mitten fa-2x"></i></p>
+                            <p>Antarctica</p>
+                        </div>
+                        <div th:case="'EUROPE'">
+                            <p><i class="fas fa-globe-europe fa-2x"></i></p>
+                            <p>Europe</p>
+                        </div>
+                        <div th:case="'AUSTRALIA'">
+                            <p><i class="fas fa-globe-asia fa-2x"></i></p>
+                            <p>Australia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3 p-2 text-center">
+                        <p><i class="fas fa-hand-holding-usd fa-2x"></i></p>
+                        <p th:text="*{#strings.capitalize(#strings.toLowerCase(pricingLevel))}">Стандартно</p>
+                    </div>
+                </div>
+                <a th:href="@{/trips/details/{id}(id=*{id})}" class="btn btn-secondary btn-sm mb-2">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block th:if="${trips != null}">
+    <h5 th:if="${trips.isEmpty()}" class="text-sm-center text-dark mx-5 mb-5"
+        th:text="|No results found for trips with ${result}|"></h5>
+
+    <th:block th:if="${not trips.isEmpty()}">
+        <nav th:replace="~{fragments/commons::pagination}"></nav>
+    </th:block>
+</th:block>
+
+<footer th:replace="~{fragments/commons::footer}"></footer>
+
+</body>
+</html>
