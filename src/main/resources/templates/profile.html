@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="profile-body">
+
+<header>
+    <nav th:replace="~{fragments/commons::navigation}"></nav>
+</header>
+
+<div class="container-fluid my-3 px-2">
+    <div class="d-flex justify-content-center align-items-center mx-3">
+        <div class="col-sm- col-lg-5 mx-auto p-3 mb-3 mt-2 bg-custom-opaque border-custom">
+
+            <h2 class="text-center text-white my-4">Profile</h2>
+
+            <div class="row mb-4 mt-5 pl-5">
+                <div class="form-group col-lg-6 col-sm-12">
+                    <h4>First name: </h4>
+                    <p th:text="${user.firstName}">Iveta</p>
+                </div>
+                <div class="form-group  col-lg-6 col-sm-12">
+                    <h4>Last name: </h4>
+                    <p th:text="${user.lastName}">Rangelova</p>
+                </div>
+            </div>
+            <div class="row mb-4 pl-5">
+                <div class="form-group  col-lg-6 col-sm-12">
+                    <h4>Username: </h4>
+                    <p th:text="${user.username}">iveta97</p>
+                </div>
+                <div class="form-group  col-lg-6 col-sm-12">
+                    <h4>Email: </h4>
+                    <p th:text="${user.email}">iveta.rangelova@gmail.com</p>
+                </div>
+            </div>
+            <div class="row my-3 pl-5 mb-5">
+                <div class="col-md-4">
+                    <div class="button-holder d-flex">
+                        <a th:href="@{/users/profile/{id}/editProfile(id=${user.id})}"
+                           class="btn btn-info btn-sm px-4">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+</body>
+</html>

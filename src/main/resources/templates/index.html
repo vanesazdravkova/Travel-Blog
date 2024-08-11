@@ -8,12 +8,183 @@
 <body>
 
 <div>
-        <nav th:replace="~{fragments/commons::navigation}"></nav>
+    <nav th:replace="~{fragments/commons::navigation}"></nav>
 </div>
-
 <div class="container-fluid">
+    <div class="row mx-0 mx-lg-2 mt-0 py-1 px-3 justify-content-center">
+        <!-- Heading centered above everything -->
+        <div class="col-12 text-center mb-1">
+            <h1 class="fs-sm fs-md">Welcome to TravelBlog!</h1>
+        </div>
 
+        <!-- Continent Sections in one row -->
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <!-- Asia -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/asian}">
+                                <img src="/images/asia.jpg" alt="Asia">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/asian}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="hide-on-small-screen">Азия
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Africa -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/african}">
+                                <img src="/images/africa.jpg" alt="Africa">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/african}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="hide-on-small-screen">Африка
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- North America -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/north-american}">
+                                <img src="/images/north_america.jpg" alt="North America">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/north-american}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="hide-on-small-screen">Северна Америка
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- South America -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/south-american}">
+                                <img src="/images/south-america.jpg" alt="South America">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/south-american}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="hide-on-small-screen">Южна Америка
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Antarctica -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/antarctican}">
+                                <img src="/images/antarctica.jpg" alt="Antarctica">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/antarctican}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="hide-on-small-screen">Антарктида
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Europe -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/european}">
+                                <img src="/images/europe.jpg" alt="Europe">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/european}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="hide-on-small-screen">Европа
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Australia -->
+                <div class="col-6 col-md-4 col-lg-2 custom-width mb-3 px-1">
+                    <div class="bg-white shadow text-center p-1">
+                        <div class="round-image m-3">
+                            <a th:href="@{/trips/australian}">
+                                <img src="/images/australia.jpg" alt="Australia">
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
+                                <a th:href="@{/trips/australian}" class="text-dark text-decoration-none">
+                                    Пътешествия в <br class="d-none d-sm-block">Австралия
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel centered below the continent sections -->
+        <div class="col-12 col-lg-8 mx-auto mt-4">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div th:each="picture, status : ${pictures}" th:object="${picture}"
+                         th:classappend="${status.index == 0} ? 'active' : ''"
+                         class="carousel-img carousel-item">
+                        <div class="carousel-img image-overlay d-flex align-content-center justify-content-center">
+                            <img th:src="${picture.url}" class="align-middle" alt="...">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="carousel-caption">
+                            <h2 th:text="${message}" class="text-left"></h2>
+                            <p th:text="'Picture added by: ' + ${picture.authorFullName}" class="font-italic text-left"></p>
+                            <p class="text-md-left"><a class="text-decoration-none text-light" th:href="@{/trips/details/{tripId}(tripId=${picture.tripId})}">View trip</a></p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <div class="mt-4">
     <footer th:replace="~{fragments/commons::footer}"></footer>

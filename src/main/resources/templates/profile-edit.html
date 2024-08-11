@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="profile-body">
+
+<header>
+  <nav th:replace="~{fragments/commons::navigation}"></nav>
+</header>
+
+<div class="container-fluid mt-5 justify-content-center align-items-center py-5 px-4">
+
+  <form th:action="@{/users/profile/{id}/editProfile(id=${userEditDto.id})}"
+        th:method="put"
+        th:object="${userEditDto}"
+        class="col-sm-12 col-lg-5 mx-auto mt-3 bg-custom-opaque border-custom p-5">
+
+    <h2 class="text-center text-white my-4">Edit Profile</h2>
+
+    <div class="row mb-4 mt-4">
+      <div class="form-group col-sm-12 col-lg-6">
+        <label for="firstName" class="text-white font-weight-bold">First name</label>
+        <input th:field="*{firstName}"
+               th:errorclass="is-invalid"
+               id="firstName"
+               type="text"
+               class="form-control"
+               placeholder="First name" />
+        <p id="inputFirstNameError"
+           class="invalid-feedback text-danger mb-0">First name length must be between 3 and 20 characters!</p>
+      </div>
+      <div class="form-group col-sm-12 col-lg-6">
+        <label for="lastName" class="text-white font-weight-bold">Last name</label>
+        <input th:field="*{lastName}"
+               th:errorclass="is-invalid"
+               id="lastName"
+               type="text"
+               class="form-control"
+               placeholder="Last name" />
+        <p id="inputLastNameError"
+           class="invalid-feedback text-danger mb-0">Last name must be between 3 and 20 characters!</p>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="form-group col-sm-12 col-lg-6">
+        <label for="username" class="text-white font-weight-bold">Username</label>
+        <input th:field="*{username}"
+               th:errorclass="is-invalid"
+               id="username"
+               type="text"
+               class="form-control"
+               placeholder="Username" />
+        <p th:each="err : ${#fields.errors('username')}"
+           th:text="${err}"
+           id="inputUsernameError"
+           class="invalid-feedback text-danger mb-0">Username length must be between 3 and 20 characters!</p>
+      </div>
+      <div class="form-group col-sm-12 col-lg-6">
+        <label for="email" class="text-white font-weight-bold">Email</label>
+        <input th:field="*{email}"
+               th:errorclass="is-invalid"
+               id="email"
+               type="text"
+               class="form-control"
+               placeholder="Email" />
+        <p th:each="err : ${#fields.errors('email')}"
+           th:text="${err}"
+           id="inputNameError"
+           class="invalid-feedback text-danger mb-0">Must be valid email address.</p>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col-md-4">
+        <div class="button-holder d-flex">
+          <input type="submit" class="btn btn-info btn-md px-4" value="Edit Profile" />
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<div>
+  <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+</body>
+</html>
