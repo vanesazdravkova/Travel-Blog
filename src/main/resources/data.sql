@@ -30,7 +30,7 @@ INSERT INTO users_roles(user_entity_id, roles_id) VALUES
 INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
 VALUES (1, "EUROPE", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
 I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "LUXURY",
-        "My Berlin trip", 2,
+        "My Berlin trip", 1,
         "Берлинска стена
         Бранденбургска врата
         Техно клуб
@@ -43,10 +43,200 @@ I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin 
         Берлинска стена", 5, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
 
 
-INSERT INTO trips_types(trip_entity_id, types_id) values (1, 3);
+INSERT INTO trips_types(trip_entity_id, types_id) values (1, 1);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (2, "ASIA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 2,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 10, "https://www.youtube.com/watch?v=cv38DPCSUNs", 2);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (2, 2);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (3, "AFRICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 3,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 12, "https://www.youtube.com/watch?v=cv38DPCSUNs", 3);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (3, 3);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (4, "SOUTH_AMERICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 15, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (4, 4);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (5, "SOUTH_AMERICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 20, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (5, 5);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (6, "NORTH_AMERICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 25, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (6, 6);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (7, "NORTH_AMERICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 25, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (7, 7);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (8, "ANTARCTICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 25, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (8, 8);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (9, "NORTH_AMERICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 25, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (9, 9);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (10, "NORTH_AMERICA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 25, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (10, 10);
+
+INSERT INTO trips(id, continent, description, pricing_level, name, countries_visited, landmarks, days, video_url, author_id)
+VALUES (11, "AUSTRALIA", "I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin
+I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin I was in Berlin ", "BUDGET",
+        "My Berlin trip", 4,
+        "Берлинска стена
+        Бранденбургска врата
+        Техно клуб
+        Музей на евреите
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена
+        Берлинска стена", 25, "https://www.youtube.com/watch?v=cv38DPCSUNs", 1);
+
+
+INSERT INTO trips_types(trip_entity_id, types_id) values (11, 11);
 
 INSERT INTO pictures(id, public_id, title, url, author_id, trip_id) VALUES
-                                                                          (1, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 1);
+                                                                          (1, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 1),
+                                                                          (2, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 2),
+                                                                          (3, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 3),
+                                                                          (4, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 4),
+                                                                          (5, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 5),
+                                                                          (6, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 6),
+                                                                          (7, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 7),
+                                                                          (8, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 8),
+                                                                          (9, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 9),
+                                                                          (10, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 10),
+                                                                          (11, "imacpdnurdompjc9l6sd", "brandenburger_tor.jpg", "https://res.cloudinary.com/dt4o2jhmk/image/upload/v1722713663/imacpdnurdompjc9l6sd.jpg", 1, 11);
 
 
 

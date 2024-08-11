@@ -26,7 +26,7 @@
 
 <body>
 
-<nav th:fragment = "navigation" class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top py-0">
+<nav th:fragment = "navigation" class="navbar navbar-expand-lg bg-white navbar-light fixed-top py-0 shadow">
     <a class="navbar-brand" href="/"><img alt="travel picture"
                                           th:src="@{/images/logo.png}"
                                           class="logo">
@@ -49,19 +49,19 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" th:href="@{/trips/all}" th:text="#{navbar_all_trips}">All Trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/asia}" th:text="#{navbar_asian_trips}">Asian trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/asian}" th:text="#{navbar_asian_trips}">Asian trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/africa}" th:text="#{navbar_african_trips}">African trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/african}" th:text="#{navbar_african_trips}">African trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/northAmerica}" th:text="#{navbar_north_american_trips}">North-American trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/north-american}" th:text="#{navbar_north_american_trips}">North-American trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/southAmerica}" th:text="#{navbar_south_american_trips}">South-American trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/south-american}" th:text="#{navbar_south_american_trips}">South-American trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/antarctica}" th:text="#{navbar_antarctican_trips}">Antarctican trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/antarctican}" th:text="#{navbar_antarctican_trips}">Antarctican trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/europe}" th:text="#{navbar_european_trips}">European trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/european}" th:text="#{navbar_european_trips}">European trips</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/trips/australia}" th:text="#{navbar_australian_trips}">Australian trips</a>
+                    <a class="dropdown-item" th:href="@{/trips/australian}" th:text="#{navbar_australian_trips}">Australian trips</a>
                 </div>
             </li>
             <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -93,7 +93,7 @@
             </li>
             <li class="nav-item" sec:authorize="isAuthenticated()">
                 <div class="form-inline my-2 my-lg-0 px-3">
-                    <div class="logged-user"
+                    <div class="text-dark"
                          th:text="#{navbar_welcome(${#authentication.principal.fullName})}">
                     </div>
                     <form th:action="@{/users/logout}" th:method="post">
@@ -109,10 +109,10 @@
                     <a class="nav-link" th:text="#{navbar_login}" th:href="@{/users/login}">Login</a>
                 </li>
             </th:block>
-            <li class="nav-item">
-                <form th:method="get">
-                    <label class="text-white" th:text="#{navbar_language}" for="lang"></label>
-                    <select
+            <li class="nav-item d-flex align-items-center">
+                <form th:method="get" class="d-flex align-items-center">
+                    <label class="text-dark mr-2 mb-0" th:text="#{navbar_language}" for="lang"></label>
+                    <select class="bg-white border-custom text-dark p-1"
                             onchange="this.form.submit()"
                             id="lang"
                             name="lang">
@@ -125,27 +125,65 @@
     </div>
 </nav>
 
-<footer th:fragment="footer" class="bg-dark text-center text-white">
+<nav  th:fragment = "pagination">
+    <ul class="pagination justify-content-center">
+        <li class="page-item" th:classappend="${trips.hasPrevious() ? '' : 'disabled'}">
+            <a th:if="${trips.hasPrevious()}"
+               th:href="@{${url}(size=${trips.getSize()},page=${trips.getNumber() - 1})}"
+               class="page-link" href="#">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a th:unless="${trips.hasPrevious()}"
+               class="page-link" href="#">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        <li class="page-item" th:each="page : ${#numbers.sequence(0, trips.getTotalPages()-1)}"
+            th:classappend="${page == trips.getNumber() ? 'disabled' : ''}">
+            <a th:unless="${page == trips.getNumber()}"
+               th:href="@{${url}(size=${trips.getSize()},page=${page})}"
+               class="page-link" href="#"
+               th:text="${page + 1}">Number</a>
+            <span th:if="${page == trips.getNumber()}" class="page-link" th:text="${page + 1}">Number</span>
+        </li>
+        <li class="page-item" th:classappend="${trips.hasNext() ? '' : 'disabled'}">
+            <a th:if="${trips.hasNext()}"
+               th:href="@{${url}(size=${trips.getSize()},page=${trips.getNumber() + 1})}"
+               class="page-link" href="#">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+            <a th:unless="${trips.hasNext()}"
+               class="page-link" href="#">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<footer th:fragment="footer" class="bg-white shadow text-center text-dark">
     <div class="container p-4 pb-0">
         <section class="mb-4">
-            <a class="btn btn-outline-light btn-floating m-1"
+            <a class="btn btn-outline-dark btn-floating m-1"
                href="https://www.facebook.com" target="_blank" role="button"
             ><i class="fab fa-facebook-f"></i
             ></a>
             <a href="mailto:vanesa.zdravkova@gmail.com" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-outline-light btn-floating m-1" role="button"
+                    class="btn btn-outline-dark btn-floating m-1" role="button"
             ><i class="fa-regular fa-envelope"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com" target="_blank" role="button">
+            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.linkedin.com" target="_blank" role="button">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com" target="_blank" role="button"
+            <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com" target="_blank" role="button"
             ><i class="fab fa-github"></i
             ></a>
         </section>
     </div>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2024 Copyright:
-        <a class="text-white">Vanesa Zdravkova</a>
+        <span class="text-dark">Vanesa Zdravkova</span>
     </div>
 </footer>
 
