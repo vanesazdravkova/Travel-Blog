@@ -1,6 +1,7 @@
 package bg.softuni.travelProject.web.exception;
 
 public class InvalidTokenException extends RuntimeException {
+
     public InvalidTokenException() {
     }
 
