@@ -1,7 +1,6 @@
 package bg.softuni.travelProject.service;
 
 import bg.softuni.travelProject.model.entity.PictureEntity;
-import bg.softuni.travelProject.model.entity.UserEntity;
 import bg.softuni.travelProject.model.enums.TripTypeEnum;
 import bg.softuni.travelProject.model.view.PictureHomePageViewModel;
 import bg.softuni.travelProject.model.view.PictureViewModel;
@@ -20,8 +19,6 @@ public interface PictureService {
     void deletePicture(Long id);
 
     boolean isOwner(String userName, Long pictureId);
-
-    boolean isAdmin(UserEntity user);
 
     PictureViewModel mapToPictureViewModel(PictureEntity picture, String principalName);
 

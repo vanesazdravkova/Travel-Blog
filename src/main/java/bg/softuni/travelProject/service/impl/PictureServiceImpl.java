@@ -21,6 +21,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.*;
 
@@ -76,6 +77,7 @@ public class PictureServiceImpl implements PictureService {
     }
 
     @Override
+    @Transactional
     public void deletePicture(Long id) {
         Optional<PictureEntity> picture = pictureRepository.findById(id);
 
@@ -108,7 +110,6 @@ public class PictureServiceImpl implements PictureService {
                 .isPresent();
     }
 
-    @Override
     public boolean isAdmin(UserEntity user) {
         return user.getRoles().
                 stream().
@@ -141,17 +142,14 @@ public class PictureServiceImpl implements PictureService {
         List<PictureHomePageViewModel> resultPictures = new ArrayList<>();
         Set<Long> selectedTripIds = new HashSet<>();
 
-        // Shuffle the list to get a random order
         Collections.shuffle(allPictures);
 
         for (PictureEntity picture : allPictures) {
-            // Check if we already have a picture from the same recipeId
             if (!selectedTripIds.contains(picture.getTrip().getId())) {
                 resultPictures.add(this.mapToPictureHomePageViewModel(picture));
                 selectedTripIds.add(picture.getTrip().getId());
             }
 
-            // Check if we have collected 3 pictures
             if (resultPictures.size() == 3) {
                 break;
             }

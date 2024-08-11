@@ -17,4 +17,6 @@ public interface PictureRepository extends JpaRepository<PictureEntity, Long> {
 
     @Query("SELECT p FROM PictureEntity p JOIN p.trip.types t WHERE :typeEntity MEMBER OF p.trip.types")
     List<PictureEntity> findAllPicturesByTripType(TypeEntity typeEntity);
+
+    void deleteAllById(Long id);
 }
