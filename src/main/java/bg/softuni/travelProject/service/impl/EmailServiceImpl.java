@@ -5,6 +5,7 @@ import bg.softuni.travelProject.service.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,9 @@ public class EmailServiceImpl implements EmailService {
 
     private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 
-    public EmailServiceImpl(TemplateEngine templateEngine, MessageSource messageSource, JavaMailSender javaMailSender) {
+    public EmailServiceImpl(TemplateEngine templateEngine,
+                            MessageSource messageSource,
+                            JavaMailSender javaMailSender) {
         this.templateEngine = templateEngine;
         this.messageSource = messageSource;
         this.javaMailSender = javaMailSender;
@@ -54,5 +57,18 @@ public class EmailServiceImpl implements EmailService {
 
     private String generateMessageContent(AbstractEmailContext context) {
         return templateEngine.process(context.getTemplateLocation(), context.getContext());
+    }
+
+    @Override
+    public void sendSimpleMessage(String to, String subject, String text) {
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("travelblog@example.com");
+        message.setTo(to);
+        message.setSubject(subject);
+        message.setText(text);
+        javaMailSender.send(message);
+
+        logger.info("Message was sent");
     }
 }
