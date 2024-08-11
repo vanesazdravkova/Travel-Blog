@@ -7,6 +7,7 @@ public enum TripTypeEnum {
     SAFARI,
     CRUISE,
     ADVENTURE,
+    FOREST,
     CULTURAL,
     HISTORICAL,
     SKI,
