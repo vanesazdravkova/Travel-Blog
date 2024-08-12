@@ -4,7 +4,7 @@
 
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <div id="overlay">
     <div id="spinner" class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
@@ -15,6 +15,8 @@
 <header>
     <nav th:replace="~{fragments/commons::navigation}"></nav>
 </header>
+
+<main class="flex-fill">
 
 <input type="hidden" name="tripId" id="tripId" th:value="${trip.id}">
 <div th:object="${trip}"
@@ -331,6 +333,8 @@
 <script th:src="@{/js/comments.js}"></script>
 <script th:src="@{/js/favorites.js}"></script>
 <script th:src="@{/js/updateOrDeleteTrip.js}"></script>
+
+</main>
 
 <footer th:replace="~{fragments/commons::footer}"></footer>
 

@@ -3,11 +3,13 @@
 
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body class="add-body">
+<body class="d-flex flex-column min-vh-100">
 
 <div>
     <nav th:replace="~{fragments/commons::navigation}"></nav>
 </div>
+
+<main class="flex-fill">
 
 <div class="container-fluid justify-content-center align-items-center">
     <div class="row">
@@ -157,6 +159,8 @@
         </form>
     </div>
 </div>
+
+</main>
 
 <div>
     <footer th:replace="~{fragments/commons::footer}"> </footer>

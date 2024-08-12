@@ -3,12 +3,13 @@
 
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <header>
     <nav th:replace="~{fragments/commons::navigation}"></nav>
 </header>
 
+<main class="flex-fill">
 <div class="container-fluid">
 
     <div class="row mb-2 px-4 text-dark">
@@ -89,6 +90,7 @@
     <nav th:replace="~{fragments/commons::pagination}"></nav>
 </th:block>
 
+</main>
 
 <footer th:replace="~{fragments/commons::footer}"></footer>
 

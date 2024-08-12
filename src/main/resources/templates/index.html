@@ -5,11 +5,14 @@
 
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <div>
     <nav th:replace="~{fragments/commons::navigation}"></nav>
 </div>
+
+<main class="flex-fill">
+
 <div class="container-fluid">
     <div class="row mx-0 mx-lg-2 mt-0 py-1 px-3 justify-content-center">
         <!-- Heading centered above everything -->
@@ -185,6 +188,7 @@
     </div>
 </div>
 
+</main>
 
 <div class="mt-4">
     <footer th:replace="~{fragments/commons::footer}"></footer>

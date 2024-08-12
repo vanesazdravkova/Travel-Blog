@@ -2,11 +2,13 @@
 <html lang="en">
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body class="profile-body">
+<body class="d-flex flex-column min-vh-100">
 
 <header>
   <nav th:replace="~{fragments/commons::navigation}"></nav>
 </header>
+
+<main class="flex-fill">
 
 <div class="container-fluid">
   <div class="d-flex justify-content-center align-items-center mx-2">
@@ -32,6 +34,8 @@
     </div>
   </div>
 </div>
+
+</main>
 
 <div>
   <footer th:replace="~{fragments/commons::footer}"></footer>

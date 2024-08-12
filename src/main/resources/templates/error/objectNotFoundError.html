@@ -5,16 +5,19 @@
 
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <header>
     <nav th:replace="~{fragments/commons::navigation}"></nav>
 </header>
 
+<main class="flex-fill">
 
 <div class="container-fluid">
     <h5 class="text-center text-dark mt-5" th:text="${errorMessage}"></h5>
 </div>
+
+</main>
 
 <div>
     <footer> </footer>
