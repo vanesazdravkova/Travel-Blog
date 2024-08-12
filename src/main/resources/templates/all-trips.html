@@ -19,7 +19,7 @@
 
         <div    th:each="t : ${trips}" th:object="${t}"
                 class="col-sm-24 col-md-12 col-lg-6 pr-4 mb-4">
-            <div class="card h-100 no-radius shadow border-0">
+            <div class="card h-100 mx-3 no-radius shadow border-0">
                 <img class="card-img-top no-radius" th:src="*{pictureUrl}" alt="Card image cap">
                 <div class="card-body">
                     <h5 th:text="*{name}"
