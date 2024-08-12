@@ -63,7 +63,7 @@
                         <option value="" selected>Select pricing level</option>
                         <option th:each="l : ${T(bg.softuni.travelProject.model.enums.PricingLevelEnum).values()}"
                                 th:value="${l}"
-                                th:text="${l}">Select pricing level</option>
+                                th:text="${#strings.capitalize(#strings.toLowerCase(l.name()))}">Select pricing level</option>
                     </select>
                     <p class="invalid-feedback text-danger mb-0">
                         Pricing Level must be selected.
@@ -77,7 +77,9 @@
                         <option value="">Select continent</option>
                         <option th:each="c : ${T(bg.softuni.travelProject.model.enums.ContinentEnum).values()}"
                                 th:value="${c}"
-                                th:text="${c}">Select Continent</option>
+                                th:text="${c.name() == 'NORTH_AMERICA' ? 'North America'
+                                : c.name() == 'SOUTH_AMERICA' ? 'South America'
+                                : #strings.capitalize(#strings.toLowerCase(c.name()))}">Select Continent</option>
                     </select>
                     <p class="invalid-feedback text-danger mb-0">
                         Continent must be selected.
@@ -91,7 +93,7 @@
                         <option value="">Select types</option>
                         <option th:each="t : ${T(bg.softuni.travelProject.model.enums.TripTypeEnum).values()}"
                                 th:value="${t}"
-                                th:text="${t}">Select type</option>
+                                th:text="${#strings.capitalize(#strings.toLowerCase(t.name()))}">Select type</option>
                     </select>
                     <p class="invalid-feedback text-danger mb-0">
                         Type must be selected.
