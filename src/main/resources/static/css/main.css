@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #464646;
+    background-color: #ffffff;
 }
 
 .add-body {
@@ -24,12 +24,12 @@ body {
 }
 
 .bg-custom {
-    background-image: linear-gradient(to bottom right, rgba(70, 70, 70, 0.8), rgba(10, 10, 10, 0.8));
+    background: white;
     color: white;
 }
 
 .bg-custom-opaque {
-    background-image: linear-gradient(to bottom right, rgba(70, 70, 70, 1.0), rgba(10, 10, 10, 1.0));
+    background: white;
     color: white;
 }
 
@@ -39,8 +39,8 @@ body {
 }
 
 .border-custom {
-    border: 2px solid #cccccca9;
-    border-radius: 8px;
+    border: 1px solid #999999;
+    border-radius: 0px;
 }
 
 .navbar .logo {
@@ -51,6 +51,10 @@ body {
     padding-top: 100px;
 }
 
+.container-fluid {
+    background-color: #f5f6ea;
+}
+
 .card-img-top {
     width: 100%;
     height: 220px; /* Set the desired fixed height */
@@ -59,10 +63,10 @@ body {
 }
 
 .main-form {
-    background-image: linear-gradient(to bottom right, rgba(70, 70, 70, 0.8), rgba(10, 10, 10, 0.8));
+    background: #ffffff;
     padding: 0px 30px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     font-size: 16px;
 }
 
@@ -153,7 +157,7 @@ ul.custom-list li {
 }
 
 .register-image {
-    background-image: linear-gradient(to bottom left, rgba(70, 70, 70, 0.8), rgba(10, 10, 10, 0.8));
+    background: white;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     overflow: hidden;
@@ -183,12 +187,13 @@ ul.custom-list li {
 
 .pagination .page-item .page-link:hover {
     background-color: #ffffff; /* Your desired background color on hover */
-    color: #343a40; /* Your desired text color on hover */
+    font-weight: bold;
+    color: #000000; /* Your desired text color on hover */
 }
 
 .pagination .page-item .page-link {
-    background-color: #343a40;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #999999;
     border: 1px solid #999999;
 }
 
@@ -207,8 +212,9 @@ nav .dropdown-item {
 }
 
 nav .dropdown-item:hover {
-    background-color: #4e555b;
-    color: darkgrey;
+    background-color: #999999;
+    font-weight: bold;
+    color: white;
 }
 
 .round-image {

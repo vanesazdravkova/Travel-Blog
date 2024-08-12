@@ -15,11 +15,11 @@
         th:object="${userEditDto}"
         class="col-sm-12 col-lg-5 mx-auto mt-3 bg-custom-opaque border-custom p-5">
 
-    <h2 class="text-center text-white my-4">Edit Profile</h2>
+    <h2 class="text-center text-dark my-4">Edit Profile</h2>
 
     <div class="row mb-4 mt-4">
       <div class="form-group col-sm-12 col-lg-6">
-        <label for="firstName" class="text-white font-weight-bold">First name</label>
+        <label for="firstName" class="text-dark font-weight-bold">First name</label>
         <input th:field="*{firstName}"
                th:errorclass="is-invalid"
                id="firstName"
@@ -30,7 +30,7 @@
            class="invalid-feedback text-danger mb-0">First name length must be between 3 and 20 characters!</p>
       </div>
       <div class="form-group col-sm-12 col-lg-6">
-        <label for="lastName" class="text-white font-weight-bold">Last name</label>
+        <label for="lastName" class="text-dark font-weight-bold">Last name</label>
         <input th:field="*{lastName}"
                th:errorclass="is-invalid"
                id="lastName"
@@ -43,7 +43,7 @@
     </div>
     <div class="row mb-4">
       <div class="form-group col-sm-12 col-lg-6">
-        <label for="username" class="text-white font-weight-bold">Username</label>
+        <label for="username" class="text-dark font-weight-bold">Username</label>
         <input th:field="*{username}"
                th:errorclass="is-invalid"
                id="username"
@@ -56,7 +56,7 @@
            class="invalid-feedback text-danger mb-0">Username length must be between 3 and 20 characters!</p>
       </div>
       <div class="form-group col-sm-12 col-lg-6">
-        <label for="email" class="text-white font-weight-bold">Email</label>
+        <label for="email" class="text-dark font-weight-bold">Email</label>
         <input th:field="*{email}"
                th:errorclass="is-invalid"
                id="email"

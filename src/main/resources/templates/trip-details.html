@@ -197,42 +197,42 @@
                         </div>
 
                         <div class="col-3 col-lg-12 text-center px-0">
-                            <p><i class="fa-solid fa-bowl-rice fa-3x mt-lg-0 mt-3"></i></p>
+                            <p><i class="far fa-flag fa-3x mt-lg-0 mt-3"></i></p>
                             <p th:text="|Посетени държави: *{countriesVisited}|">Посетени държави: 2</p>
                         </div>
 
                         <div class="col-3 col-lg-12 text-center px-0">
                             <div th:switch="${trip.continent.name()}">
                                 <div th:case="'ASIA'">
-                                    <p><i class="fa-solid fa-drumstick-bite fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-globe-asia fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Азия</p>
                                 </div>
                                 <div th:case="'AFRICA'">
-                                    <p><i class="fa-solid fa-seedling fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-globe-africa fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Африка</p>
                                 </div>
                                 <div th:case="'NORTH_AMERICA'">
-                                    <p><i class="fa-solid fa-egg fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-globe-americas fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Северна<span class="hide-on-large-screen">-</span><br
                                             class="hide-on-large-screen"> Америка
                                     </p>
                                 </div>
                                 <div th:case="'SOUTH_AMERICA'">
-                                    <p><i class="fa-solid fa-egg fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-globe-americas fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Южна<span class="hide-on-large-screen">-</span><br class="hide-on-large-screen">
                                         Америка
                                     </p>
                                 </div>
                                 <div th:case="'ANTARCTICA'">
-                                    <p><i class="fa-solid fa-egg fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-mitten fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Антарктика</p>
                                 </div>
                                 <div th:case="'EUROPE'">
-                                    <p><i class="fa-solid fa-egg fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-globe-europe fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Европа</p>
                                 </div>
                                 <div th:case="'AUSTRALIA'">
-                                    <p><i class="fa-solid fa-egg fa-3x mt-lg-0 mt-3"></i></p>
+                                    <p><i class="fas fa-globe-asia fa-3x mt-lg-0 mt-3"></i></p>
                                     <p>Австралия</p>
                                 </div>
                             </div>
@@ -240,7 +240,7 @@
 
 
                         <div class="col-3 col-lg-12 text-center px-0">
-                            <p><i class="fa-solid fa-stairs fa-3x mt-lg-0 mt-3"></i></p>
+                            <p><i class="fas fa-hand-holding-usd fa-3x mt-lg-0 mt-3"></i></p>
                             <p th:text="*{#strings.capitalize(#strings.toLowerCase(pricingLevelEnum))}">Скъпа</p>
                         </div>
 
@@ -325,12 +325,10 @@
         </div>
     </div>
 </div>
-</div>
 
 <script th:src="@{/js/comments.js}"></script>
 <script th:src="@{/js/favorites.js}"></script>
 <script th:src="@{/js/updateOrDeleteTrip.js}"></script>
-</div>
 
 <footer th:replace="~{fragments/commons::footer}"></footer>
 
