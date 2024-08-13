@@ -46,3 +46,7 @@ mail:
 site:
   base:
     url: http://localhost:8080
+
+future-trips:
+  base:
+    url: http://${FUTURE_TRIPS_HOST:localhost}:8081/future-trips

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<header>
+    <nav th:replace="~{fragments/commons::navigation}"></nav>
+</header>
+
+<main class="flex-fill">
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center mx-2">
+        <div th:object="${futureTrips}"
+             class="col-sm- col-lg-12 mx-auto p-5 bg-white mt-3 mb-5 shadow">
+
+            <div class="row mb-2 text-dark">
+                <h3 class="text-center m-auto py-3" th:text="${heading}">Future trips</h3>
+            </div>
+
+            <th:block sec:authorize="hasRole('ADMIN')">
+                <div class="text-center my-4">
+                    <a href="/future-trips/add" class="btn btn-dark shadow btn-lg">Add Future Trip</a>
+                </div>
+            </th:block>
+
+            <table class="table table-bordered">
+                <thead>
+                <tr class="bg-dark">
+                    <th class="p-3 text-white">Name</th>
+                    <th class="p-3 text-white">Destination</th>
+                    <th class="p-3 text-white">Company</th>
+                    <th class="p-3 text-white">Days</th>
+                    <th class="p-3 text-white">Price</th>
+                    <th sec:authorize="hasRole('ADMIN')" class="p-3 text-white">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="f : ${futureTrips}">
+                    <td class="p-3"><span th:text="${f.name}">Name</span></td>
+                    <td class="p-3"><span th:text="${f.destination}">Destination</span></td>
+                    <td class="p-3"><span th:text="${f.company}">Company</span></td>
+                    <td class="p-3"><span th:text="${f.days}">Days</span></td>
+                    <td class="p-3"><span th:text="${f.price}">Price</span></td>
+                    <td sec:authorize="hasRole('ADMIN')" class="p-3">
+                        <form class="delete-button"
+                              th:action="@{/future-trips/{id}(id=${f.id})}" th:method="delete">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+</body>
+</html>
