@@ -1,0 +1,26 @@
+spring:
+  sql:
+    init:
+      mode: never
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+cloudinary:
+  api-key: key
+  api-secret: secret
+  cloud-name: dt4o2jhmk
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: vanesa.zdravkova@gmail.com
+  password: "pass"
+
+
+site:
+  base:
+    url: http://localhost:8080
+
+home-page-cron: "0 0 0 * * ?"
+daily-report-cron: "0 0 * * * ?"
