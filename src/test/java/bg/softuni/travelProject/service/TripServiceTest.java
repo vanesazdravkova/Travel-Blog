@@ -22,7 +22,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class CocktailServiceTest {
+class TripServiceTest {
 
     @Autowired
     private TripRepository tripRepository;
@@ -56,7 +56,7 @@ class CocktailServiceTest {
 
     @Test
     @Transactional
-    void searchCocktailFounded() {
+    void searchTripFounded() {
         TripSearchDto tripSearchDto = testHelper.createTripSearchDto("Par");
         TripViewModel tripViewModel = getTripViewModel();
 
@@ -71,7 +71,7 @@ class CocktailServiceTest {
 
     @Test
     @Transactional
-    void searchCocktailNotFounded() {
+    void searchTripNotFounded() {
         TripSearchDto tripSearchDto = testHelper.createTripSearchDto("Prague");
 
         List<TripViewModel> actual = tripService.searchTrip(tripSearchDto,
