@@ -22,5 +22,9 @@ site:
   base:
     url: http://localhost:8080
 
+future-trips:
+  base:
+    url: http://localhost:8081/future-trips
+
 home-page-cron: "0 0 0 * * ?"
 daily-report-cron: "0 0 * * * ?"

@@ -2,18 +2,18 @@ package bg.softuni.travelProject.model.view;
 
 public class FutureTripViewModel {
 
-    private String id;
+    private Long id;
     private String name;
     private String destination;
     private String company;
     private Integer days;
     private Integer price;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public FutureTripViewModel setId(String id) {
+    public FutureTripViewModel setId(Long id) {
         this.id = id;
         return this;
     }
