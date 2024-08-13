@@ -12,9 +12,9 @@ cloudinary:
   cloud-name: dt4o2jhmk
 
 mail:
-  host: smtp.gmail.com
-  port: 587
-  username: vanesa.zdravkova@gmail.com
+  host: "localhost"
+  port: 1025
+  username: "vanesa.zdravkova@gmail.com"
   password: "pass"
 
 
