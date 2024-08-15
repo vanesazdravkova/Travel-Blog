@@ -1,10 +1,41 @@
-version: '3.3'
 services:
   db:
-    image: mysql:latest
+    image: mysql
     ports:
       - "3306:3306"
     command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_bin']
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
-      - MYSQL_DATABASE=travel
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  travel:
+    depends_on:
+      db:
+        condition: service_healthy
+    image: vanesazdravkova/travel-blog:v3
+    ports:
+      - "8080:8080"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - CLAUDINARY_API_KEY=147754227731364
+      - CLAUDINARY_API_SECRET=xMsZw9MU8kEj6l2b52AZgdONO_A
+      - EMAIL_PASSWORD=gomy snlo mrsx jcso
+      - FUTURE_TRIPS_HOST=future-trips
+  future-trips:
+    depends_on:
+      travel:
+        condition: service_started
+      db:
+        condition: service_healthy
+    image: vanesazdravkova/future-trip:v1
+    ports:
+      - "8081:8081"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - USERNAME=root
