@@ -15,8 +15,8 @@ Travel Blog is your ultimate destination for sharing and discovering travel expe
         <li><a href="#perequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <ul>
-            <li><a href="#docker">Run with Docker</a></li>
-            <li><a href="#manually">Run manually</a></li>
+            <li><a href="#run-with-docker">Run with Docker</a></li>
+            <li><a href="#run-manually">Run manually</a></li>
         </ul>
       </ul>
     </li>
@@ -24,16 +24,16 @@ Travel Blog is your ultimate destination for sharing and discovering travel expe
       <a href="#built-with">Built with</a>
     </li>
     <li>
-      <a href="#core">Core Features</a>
+      <a href="#core-features">Core Features</a>
       <ul>
-         <li><a href="#accessible">Accessible to Everyone</a></li>
-         <li><a href="#visitors">For Visitors and Newcomers</a></li>
-         <li><a href="#registered">For Registered Members</a></li>
+         <li><a href="#accessible-to-everyone">Accessible to Everyone</a></li>
+         <li><a href="#visitors-and-newcomers">For Visitors and Newcomers</a></li>
+         <li><a href="#registered-members">For Registered Members</a></li>
          <li><a href="#administrators">For Administrators</a></li>
-         <li><a href="#universal">Universal Features</a></li>
+         <li><a href="#universal-features">Universal Features</a></li>
       </ul>
     </li>
-    <li><a href="#additional">Additional Integrations</a></li>
+    <li><a href="#additional-integrations">Additional Integrations</a></li>
   </ol>
 </details>
 
