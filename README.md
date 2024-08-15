@@ -137,6 +137,7 @@ In order to run the Travel Blog project you need to:
 - **Future Trips REST API:** Enhance your travel planning with trip suggestions and more through a separate service.
 - **Cloudinary Integration:** Seamlessly upload and manage trip photos in the cloud.
 - **Docker Compatibility:** Deploy the application, REST API, and database effortlessly using Docker images and docker-compose.
-- **MapStruct and CriteriaBuilder:** Utilize advanced tools for efficient data mapping and query building.
+- **MapStruct:** Utilize advanced tools for efficient data mapping.
+- **CriteriaBuilder:** Employ a powerful API for building dynamic queries.
 - **JavaMailSender:** Keep users connected with timely verification and password recovery emails.
 - **Fully Responsive Design:** Enjoy a consistent experience across all devices, from desktop to mobile.
