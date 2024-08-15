@@ -56,7 +56,7 @@ In order to run the Travel Blog project with Docker:
 1. Navigate to /docker directory where you can find images to start the project and the REST API
 2. Execute one of the following commands:
    - docker-compose up
-   - docker-compose -f docker-compose-amd.yaml up
+   - docker-compose -f docker-compose.yaml up
 
 #### Run manually
 In order to run the Travel Blog project you need to:
