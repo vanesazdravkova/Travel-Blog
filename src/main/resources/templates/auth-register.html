@@ -21,7 +21,7 @@
 
         <div
           class="main-form col-sm-6 col-lg-3 d-flex flex-column shadow align-items-center justify-content-center">
-          <h2 class="text-center text-dark my-2 mb-4">Register</h2>
+          <h2 class="text-center text-dark my-2 mb-4" th:text="#{navbar_register}">Register</h2>
           <form th:object="${userRegisterDto}"
                 th:action="@{/users/register}"
                 th:method="post"
@@ -30,7 +30,7 @@
           >
             <div class="row">
               <div class="form-group col-sm-12 col-lg-6 mb-0">
-                <label for="firstName" class="text-dark font-weight-bold"
+                <label for="firstName" class="text-dark font-weight-bold" th:text="#{first_name}"
                   >First Name</label
                 >
                 <input th:field="*{firstName}"
@@ -40,10 +40,10 @@
                   class="form-control"
                   placeholder="First name"
                 />
-                <p class="invalid-feedback text-danger mb-0">First name must be between 2 and 20 symbols!</p>
+                <p class="invalid-feedback text-danger mb-0" th:text="#{first_name_validation}">First name must be between 2 and 20 symbols!</p>
               </div>
              <div class="form-group col-sm-12 col-lg-6 mb-0">
-               <label for="lastName" class="text-dark font-weight-bold"
+               <label for="lastName" class="text-dark font-weight-bold" th:text="#{last_name}"
                >Last Name</label
                >
                <input th:field="*{lastName}"
@@ -53,14 +53,14 @@
                       class="form-control"
                       placeholder="Last name"
                />
-               <p class="invalid-feedback text-danger mb-0">Last name must be between 2 and 20 symbols!</p>
+               <p class="invalid-feedback text-danger mb-0" th:text="#{last_name_validation}">Last name must be between 2 and 20 symbols!</p>
              </div>
 
               </div>
 
             <div class="row">
               <div class="form-group col-sm-12 col-lg-6 mb-0">
-                <label for="username" class="text-dark font-weight-bold"
+                <label for="username" class="text-dark font-weight-bold" th:text="#{username}"
                   >Username</label
                 >
                 <input th:field="*{username}"
@@ -70,12 +70,10 @@
                   class="form-control"
                   placeholder="Username"
                 />
-                <p   th:each="err : ${#fields.errors('username')}"
-                     th:text="${err}"
-                        class="text-danger mb-0">Username must be between 3 and 20 symbols!</p>
+                <p class="invalid-feedback text-danger mb-0" th:text="#{username_validation}">Username must be between 3 and 20 symbols!</p>
               </div>
               <div class="form-group col-sm-12 col-lg-6 mb-0">
-                <label for="email" class="text-dark font-weight-bold">Email</label>
+                <label for="email" class="text-dark font-weight-bold" th:text="#{email}">Email</label>
                 <input th:field="*{email}"
                        th:errorclass="is-invalid"
                        id="email"
@@ -84,13 +82,12 @@
                        placeholder="Email"
                 />
                 <p  th:each="err : ${#fields.errors('email')}"
-                    th:text="${err}"
-                        class="invalid-feedback text-danger mb-0">Enter a valid email address!</p>
+                        class="invalid-feedback text-danger mb-0" th:text="#{email_validation}">Enter a valid email address!</p>
               </div>
             </div>
             <div class="row">
               <div class="form-group col-sm-12 col-lg-6 mb-0">
-                <label for="password" class="text-dark font-weight-bold"
+                <label for="password" class="text-dark font-weight-bold" th:text="#{pass}"
                   >Password</label
                 >
                 <input  th:field="*{password}"
@@ -102,10 +99,10 @@
                   class="form-control"
                   placeholder="Password"
                 />
-                <p class="invalid-feedback text-danger mb-0">Password must be between 5 and 20 symbols!</p>
+                <p class="invalid-feedback text-danger mb-0" th:text="#{pass_validation}">Password must be between 5 and 20 symbols!</p>
               </div>
               <div class="form-group col-sm-12 col-lg-6 mb-0">
-                <label for="confirmPassword" class="text-dark font-weight-bold"
+                <label for="confirmPassword" class="text-dark font-weight-bold" th:text="#{conf_pass}"
                   >Confirm Password</label>
                 <input  th:field="*{confirmPassword}"
                         th:errorclass="is-invalid"
@@ -116,7 +113,7 @@
                   class="form-control"
                   placeholder="Confirm Password"
                 />
-                <p class="invalid-feedback text-danger mb-0">Passwords should match!</p>
+                <p class="invalid-feedback text-danger mb-0" th:text="#{invalid_pass}">Passwords should match!</p>
               </div>
             </div>
             
@@ -138,7 +135,7 @@
       </div>
     </div>
 
-    </main>>
+    </main>
 
     <div>
       <footer th:replace="~{fragments/commons::footer}"></footer>

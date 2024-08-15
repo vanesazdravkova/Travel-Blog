@@ -15,21 +15,21 @@
     <div    th:object="${statistics}"
             class="col-sm- col-lg-5 mx-auto p-5 mt-3 mb-5 shadow bg-custom-opaque">
 
-      <h2 class="text-center text-dark">Statistics</h2>
+      <h2 class="text-center text-dark" th:text="#{statistics}">Statistics</h2>
       <p class="text-center text-dark mb-4" th:inline="text">
         [[${#temporals.format(statistics.localDateTime, 'EEE, MMM dd, yyyy HH:mm')}]]
       </p>
-      <h5 th:text="|All trips: *{allTrips}|"></h5>
-      <h5 th:text="|Asian trips: *{asianTrips}|"> </h5>
-      <h5 th:text="|African trips: *{africanTrips}|"> </h5>
-      <h5 th:text="|North American trips: *{northAmericanTrips}|"> </h5>
-      <h5 th:text="|South American trips: *{southAmericanTrips}|"> </h5>
-      <h5 th:text="|Antarctican trips: *{antarcticanTrips}|"> </h5>
-      <h5 th:text="|European trips: *{europeanTrips}|"> </h5>
-      <h5 th:text="|Australian trips: *{australianTrips}|"> </h5>
-      <h5 th:text="|Registered users: *{usersCount}|"> </h5>
+      <h5 th:text="|#{navbar_all_trips}: *{allTrips}|"></h5>
+      <h5 th:text="|#{navbar_asian_trips}: *{asianTrips}|"> </h5>
+      <h5 th:text="|#{navbar_african_trips}: *{africanTrips}|"> </h5>
+      <h5 th:text="|#{navbar_north_american_trips}: *{northAmericanTrips}|"> </h5>
+      <h5 th:text="|#{navbar_south_american_trips}: *{southAmericanTrips}|"> </h5>
+      <h5 th:text="|#{navbar_antarctican_trips}: *{antarcticanTrips}|"> </h5>
+      <h5 th:text="|#{navbar_european_trips}: *{europeanTrips}|"> </h5>
+      <h5 th:text="|#{navbar_australian_trips}: *{australianTrips}|"> </h5>
+      <h5 th:text="|#{reg_users}: *{usersCount}|"> </h5>
 
-      <button class="btn btn-dark shadow btn-sm mt-4 px-4" onclick="goBackOrHome()">Back</button>
+      <button class="btn btn-dark shadow btn-sm mt-4 px-4" th:text="#{back}" onclick="goBackOrHome()">Back</button>
 
     </div>
   </div>

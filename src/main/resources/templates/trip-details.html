@@ -180,7 +180,7 @@
         <!--  Second half of Row 1 -->
         <div class="col-sm-12 col-lg-6 p-0 pl-lg-5 pl-2">
             <h2 th:text="*{name}" class="text-left">Trip title</h2>
-            <p th:text="|Добавено от : *{author}|" class="text-left"></p>
+            <p th:text="|#{added_by} *{author}|" class="text-left"></p>
 
             <!-- Vertical Icons and Sights -->
             <div class="row pr-3 pl-0">
@@ -190,47 +190,47 @@
                     <div class="row d-flex flex-row justify-content-center align-content-center">
                         <div class="col-3 col-lg-12 text-center px-0">
                             <p><i class="fas fa-calendar-day fa-3x mt-3"></i></p>
-                            <p th:text="|Дни: *{days}|">Дни: 2</p>
+                            <p th:text="|#{days_cap} *{days}|">Дни: 2</p>
                         </div>
 
                         <div class="col-3 col-lg-12 text-center px-0">
                             <p><i class="far fa-flag fa-3x mt-lg-0 mt-3"></i></p>
-                            <p th:text="|Посетени държави: *{countriesVisited}|">Посетени държави: 2</p>
+                            <p th:text="|#{visited_countires} *{countriesVisited}|">Посетени държави: 2</p>
                         </div>
 
                         <div class="col-3 col-lg-12 text-center px-0">
                             <div th:switch="${trip.continent.name()}">
                                 <div th:case="'ASIA'">
                                     <p><i class="fas fa-globe-asia fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Азия</p>
+                                    <p th:text="#{asia}">Азия</p>
                                 </div>
                                 <div th:case="'AFRICA'">
                                     <p><i class="fas fa-globe-africa fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Африка</p>
+                                    <p th:text="#{africa}">Африка</p>
                                 </div>
                                 <div th:case="'NORTH_AMERICA'">
                                     <p><i class="fas fa-globe-americas fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Северна<span class="hide-on-large-screen">-</span><br
+                                    <p th:text="#{north-america}">Северна<span class="hide-on-large-screen">-</span><br
                                             class="hide-on-large-screen"> Америка
                                     </p>
                                 </div>
                                 <div th:case="'SOUTH_AMERICA'">
                                     <p><i class="fas fa-globe-americas fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Южна<span class="hide-on-large-screen">-</span><br class="hide-on-large-screen">
+                                    <p th:text="#{south-america}">Южна<span class="hide-on-large-screen">-</span><br class="hide-on-large-screen">
                                         Америка
                                     </p>
                                 </div>
                                 <div th:case="'ANTARCTICA'">
                                     <p><i class="fas fa-mitten fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Антарктика</p>
+                                    <p th:text="#{antarctica}">Антарктика</p>
                                 </div>
                                 <div th:case="'EUROPE'">
                                     <p><i class="fas fa-globe-europe fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Европа</p>
+                                    <p th:text="#{europe}">Европа</p>
                                 </div>
                                 <div th:case="'AUSTRALIA'">
                                     <p><i class="fas fa-globe-asia fa-3x mt-lg-0 mt-3"></i></p>
-                                    <p>Австралия</p>
+                                    <p th:text="#{australia}">Австралия</p>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +247,7 @@
 
                 <div class="col-12 col-lg-9 pl-lg-3 p-0 mt-3 mt-lg-0">
                     <div class="bg-white shadow p-3 h-100">
-                        <h2 class="mb-3">Забележителности</h2>
+                        <h2 class="mb-3" th:text="#{landmarks}">Забележителности</h2>
                         <ul th:each="l : *{landmarks}" class="custom-list">
                             <li th:text="${l}"></li>
                         </ul>
@@ -266,7 +266,7 @@
 
         <div class="col-sm-12 col-lg-6 px-4">
             <div class="bg-white shadow p-3 h-100">
-                <h2>Описание</h2>
+                <h2 th:text="#{description}">Описание</h2>
                 <p th:text="*{description}"></p>
             </div>
         </div>
@@ -282,20 +282,20 @@
     <div class="row mx-lg-4 mx-1 mb-5">
         <div class="col-12 p-4">
             <section class="comments">
-                <h1>Comments</h1>
+                <h1 th:text="#{comments}">Comments</h1>
 
                 <div>
                     <form id="commentForm" method="POST"
                           th:action="@{/api/{tripId}/comments(tripId=${trip.id})}">
                         <div class="form-group">
-                            <h4>Leave a comment: </h4>
+                            <h4 th:text="#{leave_comment}">Leave a comment: </h4>
                             <textarea name="message"
                                       id="message"
                                       cols="30"
                                       rows="5"
                                       class="form-control"
                                       style="background-color: white;"></textarea>
-                            <small id="messageError" class="invalid-feedback">
+                            <small id="messageError" class="invalid-feedback" >
                                 Message should be at least 10 characters.
                             </small>
                         </div>

@@ -17,13 +17,13 @@
         <div class="main-form col-sm-6 col-lg-3 d-flex flex-column shadow align-items-center justify-content-center p-5">
 
 
-            <h3 class="text-center text-dark mt-4 mb-0">Welcome to TravelBlog!</h3>
-            <p class="text-center text-dark mt-0 mb-4">In order to complete your registration, please go to your email
+            <h3 class="text-center text-dark mt-4 mb-0" th:text="#{registration_subject}">Welcome to TravelBlog!</h3>
+            <p class="text-center text-dark mt-0 mb-4" th:text="#{complete_reg}">In order to complete your registration, please go to your email
                 to verify your account!</p>
 
 
                 <a th:href="@{/users/register/sendNewVerificationMail(username=${username})}"
-                   class="text-center mb-0">Click here and a new mail with a verification link will be sent to you.</a>
+                   class="text-center mb-0" th:text="#{new_mail}">Click here and a new mail with a verification link will be sent to you.</a>
 
         </div>
     </div>

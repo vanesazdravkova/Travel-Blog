@@ -17,7 +17,7 @@
     <div class="row mx-0 mx-lg-2 mt-0 py-1 px-3 justify-content-center">
         <!-- Heading centered above everything -->
         <div class="col-12 text-center mb-1">
-            <h1 class="fs-sm fs-md">Welcome to TravelBlog!</h1>
+            <h1 class="fs-sm fs-md" th:text="#{registration_subject}">Welcome to TravelBlog!</h1>
         </div>
 
         <!-- Continent Sections in one row -->
@@ -33,7 +33,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/asian}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/asian}" class="text-dark text-decoration-none" th:text="#{navbar_asian_trips}">
                                     Пътешествия в <br class="hide-on-small-screen">Азия
                                 </a>
                             </p>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/african}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/african}" class="text-dark text-decoration-none" th:text="#{navbar_african_trips}">
                                     Пътешествия в <br class="hide-on-small-screen">Африка
                                 </a>
                             </p>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/north-american}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/north-american}" class="text-dark text-decoration-none" th:text="#{navbar_north_american_trips}">
                                     Пътешествия в <br class="hide-on-small-screen">Северна Америка
                                 </a>
                             </p>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/south-american}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/south-american}" class="text-dark text-decoration-none" th:text="#{navbar_south_american_trips}">
                                     Пътешествия в <br class="hide-on-small-screen">Южна Америка
                                 </a>
                             </p>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/antarctican}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/antarctican}" class="text-dark text-decoration-none" th:text="#{navbar_antarctican_trips}">
                                     Пътешествия в <br class="hide-on-small-screen">Антарктида
                                 </a>
                             </p>
@@ -123,7 +123,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/european}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/european}" class="text-dark text-decoration-none" th:text="#{navbar_european_trips}">
                                     Пътешествия в <br class="hide-on-small-screen">Европа
                                 </a>
                             </p>
@@ -141,7 +141,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-center mb-0 fs-6 fs-md-5 fs-lg-4">
-                                <a th:href="@{/trips/australian}" class="text-dark text-decoration-none">
+                                <a th:href="@{/trips/australian}" class="text-dark text-decoration-none" th:text="#{navbar_australian_trips}">
                                     Пътешествия в <br class="d-none d-sm-block">Австралия
                                 </a>
                             </p>
@@ -170,8 +170,8 @@
                         </div>
                         <div class="carousel-caption">
                             <h2 th:text="${message}" class="text-left"></h2>
-                            <p th:text="'Picture added by: ' + ${picture.authorFullName}" class="font-italic text-left"></p>
-                            <p class="text-md-left"><a class="text-decoration-none text-light" th:href="@{/trips/details/{tripId}(tripId=${picture.tripId})}">View trip</a></p>
+                            <p th:text="#{picture_by} + ${picture.authorFullName}" class="font-italic text-left"></p>
+                            <p class="text-md-left"><a class="text-decoration-none text-light" th:text="#{view_trip}" th:href="@{/trips/details/{tripId}(tripId=${picture.tripId})}">View trip</a></p>
                         </div>
                     </div>
                 </div>

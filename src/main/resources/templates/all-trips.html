@@ -25,14 +25,14 @@
                 <div class="card-body">
                     <h5 th:text="*{name}"
                         class="card-title mb-0">Париж през пролетта</h5>
-                    <p th:text="|Добавена от: *{author}|"
+                    <p th:text="|#{added_by} *{author}|"
                        class="card-text">Добавено от: Ивета Рангелова</p>
                 </div>
                 <div class="card-footer">
                     <div class="d-flex flex-row">
                         <div class="col-3 p-2 text-center">
                             <p><i class="fas fa-calendar-day fa-2x"></i></p>
-                            <p th:text="|*{days} дни|">5 дни</p>
+                            <p th:text="|*{days} #{days}|">5 дни</p>
                         </div>
                         <div class="col-3 p-2 text-center">
                             <p><i class="far fa-flag fa-2x"></i></p>
@@ -43,31 +43,31 @@
                              class="col-3 p-2 text-center">
                             <div th:case="'ASIA'">
                                 <p><i class="fas fa-globe-asia fa-2x"></i></p>
-                                <p>Asia</p>
+                                <p th:text="#{asia}">Asia</p>
                             </div>
                             <div th:case="'AFRICA'">
                             <p><i class="fas fa-globe-africa fa-2x"></i></p>
-                            <p>Africa</p>
+                            <p th:text="#{africa}">Africa</p>
                             </div>
                             <div th:case="'NORTH_AMERICA'">
                                 <p><i class="fas fa-globe-americas fa-2x"></i></p>
-                                <p>North America</p>
+                                <p th:text="#{north-america}">North America</p>
                             </div>
                             <div th:case="'SOUTH_AMERICA'">
                                 <p><i class="fas fa-globe-americas fa-2x"></i></p>
-                                <p>South America</p>
+                                <p th:text="#{south-america}">South America</p>
                             </div>
                             <div th:case="'ANTARCTICA'">
                                 <p><i class="fas fa-mitten fa-2x"></i></p>
-                                <p>Antarctica</p>
+                                <p th:text="#{antarctica}">Antarctica</p>
                             </div>
                             <div th:case="'EUROPE'">
                                 <p><i class="fas fa-globe-europe fa-2x"></i></p>
-                                <p>Europe</p>
+                                <p th:text="#{europe}">Europe</p>
                             </div>
                             <div th:case="'AUSTRALIA'">
                                 <p><i class="fas fa-globe-asia fa-2x"></i></p>
-                                <p>Australia</p>
+                                <p th:text="#{australia}">Australia</p>
                             </div>
                         </div>
 
@@ -76,7 +76,7 @@
                             <p th:text="*{#strings.capitalize(#strings.toLowerCase(pricingLevel))}">Стандартно</p>
                         </div>
                     </div>
-                    <a th:href="@{/trips/details/{id}(id=*{id})}" class="btn btn-dark shadow btn-sm mb-2">Details</a>
+                    <a th:href="@{/trips/details/{id}(id=*{id})}" class="btn btn-dark shadow btn-sm mb-2" th:text="#{details}">Details</a>
                 </div>
             </div>
         </div>
