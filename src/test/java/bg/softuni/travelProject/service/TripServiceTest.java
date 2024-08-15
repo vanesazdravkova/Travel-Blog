@@ -23,17 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class TripServiceTest {
-
-    @Autowired
-    private TripRepository tripRepository;
-    @Autowired
-    private ModelMapper modelMapper;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private TypeService typeService;
-    @Autowired
-    private PictureService pictureService;
     @Autowired
     private TestHelper testHelper;
     @Autowired

@@ -52,8 +52,6 @@ class UserRegisterControllerTest {
     private SecureTokenRepository secureTokenRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Autowired
-    private UserService userService;
 
     private static final String TEST_USER_USERNAME = "user";
     private static final String TEST_USER_FIRSTNAME = "User";

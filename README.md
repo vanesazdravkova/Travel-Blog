@@ -1,6 +1,6 @@
 # Welcome to Travel Blog!
 
-**<span style="font-size: larger;">The project depends on the [Future Trips Rest API](https://github.com/vanesazdravkova/Future-Trips)</span>**
+**<span style="font-size: larger;">The project fetches information about future trips from the [Future Trips Rest API](https://github.com/vanesazdravkova/Future-Trips)</span>**
 
 Travel Blog is your ultimate destination for sharing and discovering travel experiences. Our platform allows you to effortlessly upload and showcase your trips, from breathtaking landscapes to hidden gems and unforgettable adventures. Whether you're a seasoned traveler or a weekend explorer, you can create detailed posts, upload photos, and see the trips of like-minded wanderers.
 
